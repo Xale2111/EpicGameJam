@@ -174,6 +174,29 @@ public class DrawingPad : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoi
 
     public Texture2D GetTexture() => drawTexture;
 
+    /// <summary>
+    /// Vérifie que le dessin contient un minimum de pixels "peints" (alpha au-dessus du seuil).
+    /// À appeler avant de créer le sprite, pour éviter de valider une toile vide ou presque.
+    /// </summary>
+    /// <param name="minPaintedPixels">Nombre minimum de pixels colorés requis.</param>
+    /// <param name="alphaThreshold">Alpha à partir duquel un pixel est considéré comme "peint".</param>
+    public bool HasEnoughContent(int minPaintedPixels = 50, float alphaThreshold = 0.05f)
+    {
+        Color[] pixels = drawTexture.GetPixels();
+        int count = 0;
+
+        for (int i = 0; i < pixels.Length; i++)
+        {
+            if (pixels[i].a >= alphaThreshold)
+            {
+                count++;
+                if (count >= minPaintedPixels) return true; // sortie anticipée
+            }
+        }
+
+        return false;
+    }
+
     /// <summary>Convertit le dessin actuel en Sprite utilisable sur un SpriteRenderer.</summary>
     public Sprite CreateSprite()
     {

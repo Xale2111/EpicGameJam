@@ -15,8 +15,9 @@ public class DrawnCreatureSpawner : MonoBehaviour
     private System.Collections.Generic.List<GameObject> spawnedCreatures = new System.Collections.Generic.List<GameObject>();
 
     /// <summary>À appeler depuis le bouton "Valider" du popup.</summary>
-    public void ValiderDessin()
+    public void ValidateDrawing()
     {
+        if (!drawingPad.HasEnoughContent()) return;
         Sprite sprite = drawingPad.CreateSprite();
         GameObject nouvelAnimal = SpawnNewCreature(sprite);
         spawnedCreatures.Add(nouvelAnimal);

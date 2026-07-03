@@ -384,7 +384,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1929011499}
         m_TargetAssemblyTypeName: DrawnCreatureSpawner, Assembly-CSharp
-        m_MethodName: ValiderDessin
+        m_MethodName: ValidateDrawing
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
