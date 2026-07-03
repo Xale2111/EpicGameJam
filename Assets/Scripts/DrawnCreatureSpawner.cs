@@ -11,38 +11,27 @@ public class DrawnCreatureSpawner : MonoBehaviour
     public GameObject creaturePrefab;
     public Transform spawnPoint;
 
-    [Header("Options")]
-    public bool sauvegarderSurDisque = false;
-    public string nomFichier = "creature_dessinee";
-
-    private GameObject spawnedCreature;
+    /// <summary>Liste des créatures instanciées, si tu veux garder une trace de toutes.</summary>
+    private System.Collections.Generic.List<GameObject> spawnedCreatures = new System.Collections.Generic.List<GameObject>();
 
     /// <summary>À appeler depuis le bouton "Valider" du popup.</summary>
     public void ValiderDessin()
     {
         Sprite sprite = drawingPad.CreateSprite();
-        ApplySpriteToCreature(sprite);
-
-        if (sauvegarderSurDisque)
-        {
-            string path = drawingPad.SaveToDisk(nomFichier);
-            Debug.Log("Dessin sauvegardé : " + path);
-        }
-
+        GameObject nouvelAnimal = SpawnNewCreature(sprite);
+        spawnedCreatures.Add(nouvelAnimal);
+        
         // Ferme le popup ici si besoin, ex :
         // drawingPad.transform.root.gameObject.SetActive(false);
     }
 
-    private void ApplySpriteToCreature(Sprite sprite)
+    private GameObject SpawnNewCreature(Sprite sprite)
     {
-        if (spawnedCreature == null)
-        {
-            Vector3 pos = spawnPoint != null ? spawnPoint.position : Vector3.zero;
-            spawnedCreature = Instantiate(creaturePrefab, pos, Quaternion.identity);
-        }
+        Vector3 pos = spawnPoint != null ? spawnPoint.position : Vector3.zero;
+        GameObject animal = Instantiate(creaturePrefab, pos, Quaternion.identity);
 
         // GetComponentInChildren couvre le cas où le SpriteRenderer est sur un enfant du prefab
-        SpriteRenderer sr = spawnedCreature.GetComponentInChildren<SpriteRenderer>();
+        SpriteRenderer sr = animal.GetComponentInChildren<SpriteRenderer>();
         if (sr != null)
         {
             sr.sprite = sprite;
@@ -51,8 +40,10 @@ public class DrawnCreatureSpawner : MonoBehaviour
         {
             Debug.LogWarning("Aucun SpriteRenderer trouvé sur le prefab '" + creaturePrefab.name + "'.");
         }
+
+        return animal;
     }
 
-    /// <summary>Utile si tu veux permettre au joueur de re-dessiner et remplacer le sprite existant.</summary>
-    public GameObject GetSpawnedCreature() => spawnedCreature;
+    /// <summary>Renvoie toutes les créatures instanciées jusqu'ici.</summary>
+    public System.Collections.Generic.List<GameObject> GetSpawnedCreatures() => spawnedCreatures;
 }

@@ -1,6 +1,9 @@
+using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 /// <summary>
 /// À attacher sur un RawImage (UI). Permet de dessiner dessus au clic/drag
@@ -11,11 +14,14 @@ public class DrawingPad : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoi
 {
     [Header("Réglages de la texture")]
     public int textureSize = 512;
-    public Color backgroundColor = Color.white;
+    public Color backgroundColor = new Color(0,0,0,0);
 
     [Header("Réglages du pinceau")]
     public Color brushColor = Color.black;
     [Range(1, 50)] public int brushSize = 8;
+    [SerializeField] private int maxBrushSize = 16;
+    [SerializeField] private int minBrushSize = 2;
+    [SerializeField] private TextMeshProUGUI sizeButtonText;
 
     private Texture2D drawTexture;
     private RawImage rawImage;
@@ -27,6 +33,11 @@ public class DrawingPad : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoi
         rawImage = GetComponent<RawImage>();
         rectTransform = GetComponent<RectTransform>();
         InitTexture();
+    }
+
+    private void Start()
+    {
+        sizeButtonText.text = "Size (" + brushSize + ")";
     }
 
     /// <summary>Crée une texture vierge (à appeler aussi pour réinitialiser à une autre taille).</summary>
@@ -125,20 +136,36 @@ public class DrawingPad : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoi
     /// <summary>Convertit le dessin actuel en Sprite utilisable sur un SpriteRenderer.</summary>
     public Sprite CreateSprite()
     {
+        Texture2D copie = CloneTexture(drawTexture);
         return Sprite.Create(
-            drawTexture,
-            new Rect(0, 0, drawTexture.width, drawTexture.height),
+            copie,
+            new Rect(0, 0, copie.width, copie.height),
             new Vector2(0.5f, 0.5f),
             100f // pixels per unit, à ajuster selon ton jeu
         );
     }
-
-    /// <summary>Optionnel : sauvegarde le dessin en PNG sur le disque (persistance entre sessions).</summary>
-    public string SaveToDisk(string fileName)
+ 
+    /// <summary>Crée une copie indépendante (nouveaux pixels en mémoire) de la texture donnée.</summary>
+    private Texture2D CloneTexture(Texture2D source)
     {
-        byte[] pngData = drawTexture.EncodeToPNG();
-        string path = System.IO.Path.Combine(Application.persistentDataPath, fileName + ".png");
-        System.IO.File.WriteAllBytes(path, pngData);
-        return path;
+        Texture2D copie = new Texture2D(source.width, source.height, source.format, false);
+        copie.filterMode = source.filterMode;
+        copie.wrapMode = source.wrapMode;
+        copie.SetPixels(source.GetPixels());
+        copie.Apply();
+        return copie;
     }
+
+
+    public void ChangeBrushColor(Color color)
+    {
+        brushColor = color;
+    }
+
+    public void ChangeBrushSize()
+    {
+        brushSize = Random.Range(minBrushSize, maxBrushSize);
+        sizeButtonText.text = "Size (" + brushSize + ")";
+    }
+
 }
