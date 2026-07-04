@@ -1,6 +1,8 @@
 using UnityEngine;
 
 public class GameManager : MonoBehaviour {
+    public DrawingDataSaver _drawingDataSaver;
+
     public static GameManager _instance;
 
     public bool _isPlayerDrawing = false;
@@ -12,5 +14,8 @@ public class GameManager : MonoBehaviour {
         else {
             Destroy(gameObject);
         }
+
+        _drawingDataSaver = new DrawingDataSaver();
+        _drawingDataSaver.Initialize();
     }
 }
