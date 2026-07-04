@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 /// <summary>
@@ -7,12 +8,18 @@ using UnityEngine;
 public class DrawnCreatureSpawner : MonoBehaviour
 {
     [Header("Références")]
+    public GameObject drawingPanel;
     public DrawingPad drawingPad;
     public GameObject creaturePrefab;
     public Transform spawnPoint;
-
+    
     /// <summary>Liste des créatures instanciées, si tu veux garder une trace de toutes.</summary>
     private System.Collections.Generic.List<GameObject> spawnedCreatures = new System.Collections.Generic.List<GameObject>();
+
+    private void Start()
+    {
+        HidePanel();
+    }
 
     /// <summary>À appeler depuis le bouton "Valider" du popup.</summary>
     public void ValidateDrawing()
@@ -23,6 +30,8 @@ public class DrawnCreatureSpawner : MonoBehaviour
         GameObject nouvelAnimal = SpawnNewCreature(sprite);
         spawnedCreatures.Add(nouvelAnimal);
         drawingPad.ClearCanvas();
+        HidePanel();
+        GameManager._instance._isPlayerDrawing = false;
         
         // Ferme le popup ici si besoin, ex :
         // drawingPad.transform.root.gameObject.SetActive(false);
@@ -45,6 +54,16 @@ public class DrawnCreatureSpawner : MonoBehaviour
         }
 
         return animal;
+    }
+
+    public void ShowPanel()
+    {
+        drawingPanel.SetActive(true);
+    }
+    
+    public void HidePanel()
+    {
+        drawingPanel.SetActive(false);
     }
 
     /// <summary>Renvoie toutes les créatures instanciées jusqu'ici.</summary>
