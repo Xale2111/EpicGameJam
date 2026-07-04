@@ -7,6 +7,7 @@ public class PlayerDrawer : MonoBehaviour{
     public GameObject drawingPanel;
     public DrawingPad drawingPad;
     [SerializeField] RawImage _playerDisplay;
+    [SerializeField] GameObject _bodyTemplate;
 
     SpriteRenderer _playerBodyRenderer;
     SpriteRenderer _playerHatRenderer;
@@ -60,6 +61,7 @@ public class PlayerDrawer : MonoBehaviour{
             SetPlayerPart(sprite);
 
             _hatText.SetActive(true);
+            _bodyText.SetActive(false);
             _bodyText.SetActive(false);
         }
 
