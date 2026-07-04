@@ -11,6 +11,9 @@ public class PlayerDrawer : MonoBehaviour{
     SpriteRenderer _playerBodyRenderer;
     SpriteRenderer _playerHatRenderer;
 
+    [SerializeField] GameObject _bodyText;
+    [SerializeField] GameObject _hatText;
+
     bool _isBodyDrawn = false;
 
     [SerializeField] GameObject playerDrawingCanevas;
@@ -55,6 +58,9 @@ public class PlayerDrawer : MonoBehaviour{
             _playerDisplay.texture = tuple.Item2;
 
             SetPlayerPart(sprite);
+
+            _hatText.SetActive(true);
+            _bodyText.SetActive(false);
         }
 
         drawingPad.ClearCanvas();
