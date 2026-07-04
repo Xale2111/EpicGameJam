@@ -18,4 +18,6 @@ public class GameManager : MonoBehaviour {
         _drawingDataSaver = new DrawingDataSaver();
         _drawingDataSaver.Initialize();
     }
+
+
 }

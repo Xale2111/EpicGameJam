@@ -7,15 +7,24 @@ public struct Animal {
     public Sprite _food;
 }
 
+public enum Animals {
+    LAMA,
+    CONDOR,
+    Length,
+    NONE
+}
+
+public enum DrawnElement{
+    BODY,
+    HABITAT,
+    FOOD
+}
+
 [CreateAssetMenu(fileName = "DrawingDataSaver", menuName = "Scriptable Objects/DrawingDataSaver")]
 public class DrawingDataSaver : ScriptableObject {
     bool _initilized = false;
 
-    public enum Animals {
-        LAMA,
-        CONDOR,
-        Length
-    }
+    
 
     public Animal[] _animals;
 
