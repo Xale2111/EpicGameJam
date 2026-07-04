@@ -19,6 +19,7 @@ public class DrawnCreatureSpawner : MonoBehaviour
     {
         if (!drawingPad.HasEnoughContent()) return;
         Sprite sprite = drawingPad.CreateSprite();
+        //STOCKER SPRITE
         GameObject nouvelAnimal = SpawnNewCreature(sprite);
         spawnedCreatures.Add(nouvelAnimal);
         drawingPad.ClearCanvas();
