@@ -10,6 +10,10 @@ public class PlayerController : MonoBehaviour {
     float _angleModifier = 1f;
     bool _sprinting = false;
     void Update() {
+        if(GameManager._instance._isPlayerDrawing) {
+            return;
+        }
+
         if(Input.GetKeyDown(KeyCode.LeftShift)) {
             _sprinting = true;
         }
