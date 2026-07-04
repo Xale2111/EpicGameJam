@@ -23,8 +23,8 @@ public class PlayerController : MonoBehaviour {
 
         Vector2 input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
 
-        //transform.Translate(input * _speed * Time.deltaTime * (_sprinting ? 2f : 1f));
-        GetComponent<Rigidbody2D>().linearVelocity = input * _speed * (_sprinting ? 2f : 1f);
+        transform.Translate(input * _speed * Time.deltaTime * (_sprinting ? 2f : 1f));
+        //GetComponent<Rigidbody2D>().linearVelocity = input * _speed * (_sprinting ? 2f : 1f);
 
         if(input.sqrMagnitude > 0f) {
             if(_currentAngle == _bobbingAngle * _angleModifier) {
