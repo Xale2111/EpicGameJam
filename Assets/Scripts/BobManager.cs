@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using Unity.Cinemachine;
 using UnityEngine;
 
@@ -26,10 +27,17 @@ public class BobManager : MonoBehaviour
     [SerializeField] private GameObject shoes;
     [SerializeField] private GameObject feet;
 
+    [Header("Bob positions")][Space(10)]
     [SerializeField] private BobPosition[] positions;
+    
+    [Header("Dialogs")][Space(10)]
+    [SerializeField] private string[] dialogLines;
+    [SerializeField] private TextMeshProUGUI dialogueText;
+    
     Transform player;
     
     int currentPosition = 0;
+    int currentDialogLine = 0;
     
     BobState currentBobState = BobState.Hat;
     
@@ -76,7 +84,9 @@ public class BobManager : MonoBehaviour
         }
 
         currentBobState++;
+        currentDialogLine++;
         positions[currentPosition].beenInPosition = true;
+        
     }
 
     private void Update()
@@ -105,6 +115,11 @@ public class BobManager : MonoBehaviour
         }
         currentPosition = closestPositionIndex;
         transform.position = positions[closestPositionIndex].position;
+    }
+
+    public void SetDialogLine()
+    {
+        dialogueText.text = dialogLines[currentDialogLine];
     }
 
     public void HideHat()
