@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour {
 
     public bool _isPlayerDrawing = false;
 
-    Animals _currentAnimalBeingDrawn = Animals.NONE;
+    public Animals _currentAnimalBeingDrawn = Animals.NONE;
 
     DrawnElement _currentDrawnElement = DrawnElement.NONE;
 

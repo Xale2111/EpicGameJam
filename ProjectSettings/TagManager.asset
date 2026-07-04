@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Circus
   layers:
   - Default
   - TransparentFX
@@ -40,6 +41,24 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Ground
+    uniqueID: 2560712145
+    locked: 0
+  - name: Bush
+    uniqueID: 3620199739
+    locked: 0
+  - name: Animal
+    uniqueID: 991960365
+    locked: 0
+  - name: Bob
+    uniqueID: 93536481
+    locked: 0
+  - name: Circus
+    uniqueID: 548473217
+    locked: 0
+  - name: Player
+    uniqueID: 1328239329
     locked: 0
   m_RenderingLayers:
   - Default

@@ -77,8 +77,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 991960365
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 0}
@@ -252,3 +252,5 @@ MonoBehaviour:
     m_PostInfinity: 1
     m_RotationOrder: 4
   spriteTransform: {fileID: 7540239089186900731}
+  spriteForwardOffsetDegrees: 0
+  rotationSpeed: 180

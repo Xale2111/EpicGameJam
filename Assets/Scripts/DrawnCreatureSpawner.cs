@@ -54,6 +54,16 @@ public class DrawnCreatureSpawner : MonoBehaviour
         Vector3 pos = spawnPoint != null ? spawnPoint.position : Vector3.zero;
         GameObject animal = Instantiate(creaturePrefab, pos, Quaternion.identity);
 
+        if (GameManager._instance._currentAnimalBeingDrawn == Animals.CONDOR ||
+            GameManager._instance._currentAnimalBeingDrawn == Animals.FLAMINGO)
+        {
+            animal.GetComponent<FollowPlayer>().isFlying = true;
+        }
+        else
+        {
+            animal.GetComponent<FollowPlayer>().isFlying = false;
+        }
+
         // GetComponentInChildren couvre le cas où le SpriteRenderer est sur un enfant du prefab
         SpriteRenderer sr = animal.GetComponentInChildren<SpriteRenderer>();
         if (sr != null)

@@ -10,6 +10,9 @@ public struct Animal {
 public enum Animals {
     LAMA,
     CONDOR,
+    TAPIR,
+    PINGUIN,
+    FLAMINGO,
     Length,
     NONE
 }
