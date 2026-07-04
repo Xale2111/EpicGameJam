@@ -1,18 +1,15 @@
 using UnityEngine;
 
 public class FauneEcounter : EventTriggerer {
-    [SerializeField] float EncounterProba = 30f;
-
+    [SerializeField] Animals _animalToEncounter = Animals.NONE;
+    bool _isTrigger = false;
 
     public override void EventTrigger() {
-        float result = Random.Range(0f, 100f);
+        if(_isTrigger)
+            return;
 
-        if(result < EncounterProba) {
-            Debug.Log("I FOUND A NEW FRIEND");
-
-            GameManager._instance._isPlayerDrawing = true;
-        }
+        GameManager._instance._isPlayerDrawing = true;
+        GameManager._instance.ElementDrawn(DrawnElement.BODY, _animalToEncounter);
+        _isTrigger = true;
     }
-
-    
 }

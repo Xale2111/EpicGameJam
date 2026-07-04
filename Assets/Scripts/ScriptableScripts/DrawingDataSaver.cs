@@ -17,16 +17,19 @@ public enum Animals {
 public enum DrawnElement{
     BODY,
     HABITAT,
-    FOOD
+    FOOD,
+    CHAPITEAU,
+    NONE
 }
 
 [CreateAssetMenu(fileName = "DrawingDataSaver", menuName = "Scriptable Objects/DrawingDataSaver")]
 public class DrawingDataSaver : ScriptableObject {
     bool _initilized = false;
 
-    
-
     public Animal[] _animals;
+
+    public Sprite _chapiteau;
+
 
     public void Initialize() {
         if(_initilized)
