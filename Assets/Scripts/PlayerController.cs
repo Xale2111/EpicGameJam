@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour {
         Vector2 input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
 
         //transform.Translate(input * _speed * Time.deltaTime * (_sprinting ? 2f : 1f));
-        _rb.linearVelocity = input * _speed * (_sprinting ? 2f : 1f)
+        _rb.linearVelocity = input * _speed * (_sprinting ? 2f : 1f);
 
 
         _isMoving = input.sqrMagnitude > 0f;
