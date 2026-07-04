@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
     [SerializeField] Transform _playerVisual;
+    Rigidbody2D _rb;
 
     [SerializeField] public SpriteRenderer _playerBody;
     [SerializeField] public SpriteRenderer _playerHat;
@@ -14,6 +15,10 @@ public class PlayerController : MonoBehaviour {
     bool _sprinting = false;
 
     bool _isMoving = false;
+
+    private void Start() {
+        _rb = GetComponent<Rigidbody2D>();
+    }
 
     void Update() {
         if(GameManager._instance._isPlayerDrawing) {
@@ -29,7 +34,9 @@ public class PlayerController : MonoBehaviour {
 
         Vector2 input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
 
-        transform.Translate(input * _speed * Time.deltaTime * (_sprinting ? 2f : 1f));
+        //transform.Translate(input * _speed * Time.deltaTime * (_sprinting ? 2f : 1f));
+        _rb.linearVelocity = input * _speed * (_sprinting ? 2f : 1f)
+
 
         _isMoving = input.sqrMagnitude > 0f;
     }
