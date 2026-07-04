@@ -42,8 +42,36 @@ public class GameManager : MonoBehaviour {
             case DrawnElement.CHAPITEAU:
             _drawingDataSaver._chapiteau = spriteToSave;
             break;
-            case DrawnElement.NONE:
+            case DrawnElement.PLAYER_BODY:
+            _drawingDataSaver._playerBody = spriteToSave;
+            break;
+            case DrawnElement.PLAYER_HAT:
+            _drawingDataSaver._playerHat = spriteToSave;
             break;
         }
+    }
+
+    public Sprite GetDrawing(DrawnElement element, Animals animal) {
+        switch(_currentDrawnElement) {
+            case DrawnElement.BODY:
+            return _drawingDataSaver._animals[(int)_currentAnimalBeingDrawn]._body;
+
+            case DrawnElement.HABITAT:
+            return _drawingDataSaver._animals[(int)_currentAnimalBeingDrawn]._habitat;
+
+            case DrawnElement.FOOD:
+            return _drawingDataSaver._animals[(int)_currentAnimalBeingDrawn]._food;
+
+            case DrawnElement.CHAPITEAU:
+            return _drawingDataSaver._chapiteau;
+
+            case DrawnElement.PLAYER_BODY:
+            return _drawingDataSaver._playerBody;
+
+            case DrawnElement.PLAYER_HAT:
+            return _drawingDataSaver._playerHat;
+        }
+
+        return null;
     }
 }

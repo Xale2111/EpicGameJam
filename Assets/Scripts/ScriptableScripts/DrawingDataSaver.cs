@@ -19,6 +19,8 @@ public enum DrawnElement{
     HABITAT,
     FOOD,
     CHAPITEAU,
+    PLAYER_BODY,
+    PLAYER_HAT,
     NONE
 }
 
@@ -29,6 +31,9 @@ public class DrawingDataSaver : ScriptableObject {
     public Animal[] _animals;
 
     public Sprite _chapiteau;
+
+    public Sprite _playerBody;
+    public Sprite _playerHat;
 
 
     public void Initialize() {
