@@ -7201,6 +7201,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1686834329}
+  - component: {fileID: 1686834330}
   m_Layer: 0
   m_Name: BOB
   m_TagString: Untagged
@@ -7217,7 +7218,7 @@ Transform:
   m_GameObject: {fileID: 1686834328}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.78, y: 2.73, z: 0}
+  m_LocalPosition: {x: 12.7, y: -8.34, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7229,6 +7230,26 @@ Transform:
   - {fileID: 774513118}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1686834330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1686834328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb1da57fe5c4f44a959de1e261cc64a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  hat: {fileID: 1867620945}
+  tshirt: {fileID: 774513117}
+  pants: {fileID: 1551828441}
+  shoes: {fileID: 1401064309}
+  feet: {fileID: 277496495}
+  positions:
+  - {x: -7.71, y: 8.13}
+  - {x: 12.7, y: -8.34}
 --- !u!1 &1687360066
 GameObject:
   m_ObjectHideFlags: 0
@@ -8245,6 +8266,7 @@ MonoBehaviour:
   drawingPad: {fileID: 1200648954}
   creaturePrefab: {fileID: 7295105542890424745, guid: 54dd984508cae3049ad828814c0f1439, type: 3}
   spawnPoint: {fileID: 1953201486}
+  bobManager: {fileID: 1686834330}
 --- !u!4 &1929011500
 Transform:
   m_ObjectHideFlags: 0

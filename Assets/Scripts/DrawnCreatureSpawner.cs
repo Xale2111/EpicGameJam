@@ -15,6 +15,8 @@ public class DrawnCreatureSpawner : MonoBehaviour
     public GameObject creaturePrefab;
     public Transform spawnPoint;
     
+    [SerializeField] BobManager bobManager;
+    
     /// <summary>Liste des créatures instanciées, si tu veux garder une trace de toutes.</summary>
     private System.Collections.Generic.List<GameObject> spawnedCreatures = new System.Collections.Generic.List<GameObject>();
 
@@ -42,7 +44,7 @@ public class DrawnCreatureSpawner : MonoBehaviour
         drawingPad.ClearCanvas();
         HidePanel();
         GameManager._instance._isPlayerDrawing = false;
-        
+        bobManager.NextPosition();
         // Ferme le popup ici si besoin, ex :
         // drawingPad.transform.root.gameObject.SetActive(false);
     }
