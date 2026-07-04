@@ -206,7 +206,7 @@ public class DrawingPad : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoi
             copie,
             new Rect(0, 0, copie.width, copie.height),
             new Vector2(0.5f, 0.5f),
-            100f // pixels per unit, à ajuster selon ton jeu
+            256f // pixels per unit, à ajuster selon ton jeu
         );
 
         GameManager._instance.SaveDrawing(newSprite);
