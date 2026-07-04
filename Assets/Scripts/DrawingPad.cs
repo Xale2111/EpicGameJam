@@ -201,12 +201,17 @@ public class DrawingPad : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoi
     public Sprite CreateSprite()
     {
         Texture2D copie = CloneTexture(drawTexture);
-        return Sprite.Create(
+
+        Sprite newSprite = Sprite.Create(
             copie,
             new Rect(0, 0, copie.width, copie.height),
             new Vector2(0.5f, 0.5f),
             100f // pixels per unit, à ajuster selon ton jeu
         );
+
+        GameManager._instance.SaveDrawing(newSprite);
+
+        return newSprite;
     }
 
     /// <summary>Crée une copie indépendante (nouveaux pixels en mémoire) de la texture donnée.</summary>
