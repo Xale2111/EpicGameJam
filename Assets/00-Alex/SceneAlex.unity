@@ -7763,7 +7763,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   _animal: 0
-  drawingManager: {fileID: 1929011499}
 --- !u!1 &1989399985
 GameObject:
   m_ObjectHideFlags: 0

@@ -152,7 +152,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &2361858926126607387
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -211,3 +211,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ebfdb13671157b418406633e6637df9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  isFlying: 0
+  shortRadius: 2
+  farRadius: 20
+  infinityWidth: 30
+  infinityHeight: 15
+  curveSpeed: 20
+  snapToPathDistance: 1
+  boingCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.5
+      value: 0.3
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 1
+    m_PostInfinity: 1
+    m_RotationOrder: 4
+  spriteTransform: {fileID: 7540239089186900731}
