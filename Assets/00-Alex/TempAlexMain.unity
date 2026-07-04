@@ -20939,7 +20939,56 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Dialogue
+  m_text: "HEY MON SUPRA BROTHA FROM ANOTHER MOTHA ! Alors, \xE7a roule ou bien !
+    DAB. Qu'est-ce que \xE7a me fait plaisir de te voir ! J'ai l'impression que \xE7a
+    fait au moins 2 BONNES heures qu'on a pas discut\xE9 ! Cependant, qu'est-ce qui
+    fait bon l\xE0 tout de suite ! C'est comme si je ne faisais plus qu'un avec la
+    nature et le vent. Tu sais, un ancien coll\xE8gue \xE0 moi, enfin c'\xE9tait
+    pas vraiment un coll\xE8gue. On bossait juste dans le m\xEAme Starboucs et puis
+    un jour, il a arr\xEAt\xE9 de venir. Je crois qu'il a \xE9t\xE9 vir\xE9. C'est
+    dommage, on s'entendait super bien, lui et moi. Il m'a m\xEAme promis une mesure
+    d'\xE9loignement ! Tu te rends compte ! Il \xE9tait pr\xEAt \xE0 inventer une
+    mesure juste pour moi ! Comme les Am\xE9ricains qui comptent en Texas par champ
+    de football carr\xE9. Je disais quoi moi d\xE9j\xE0 ? Ah oui, il m'a dit un jour
+    que j'\xE9tais un v\xE9ritable bouffon ! Ce jour-l\xE0 j'ai compris que j'avais
+    \xE9t\xE9 promis \xE0 une proph\xE9tie certaine ! Promis \xE0 moi il y a AU MOINS
+    3000 ans. Cette proph\xE9tie, c'est celle de devenir humoriste. Depuis, je m'entra\xEEne
+    devant des vid\xE9os de Kov Odoms et Tax, tu sais l'animateur des Zemmours ?
+    Tu devrais venir \xE0 une de mes r\xE9p\xE9titions une fois, je suis s\xFBr que
+    \xE7a pourrait te plaire ! Je le sens, j'ai le don pour \xE7a moi, tu sais ?
+    On va devenir tr\xE8s tr\xE8s proches, toi et moi. Bon, m\xEAme si je sens que
+    tu m'aimes plus que moi je t'aime. Mais c'est pas grave ! C'est OK. Perso \xE7a
+    me d\xE9range pas ! Tu sais ce qui me d\xE9range par contre ! Les arbres ! Ils
+    sont l\xE0 dans nos campagnes et ils calment que les particules de chaud autour
+    d'eux ! J'en ai vu des \xE9go\xEFstes, mais c'est quelque chose quand m\xEAme
+    ! De toute fa\xE7on, il y a plus de saison de nos jours. Un coup il fait chaud,
+    puis il fait froid. Non mais c'est vrai. Regarde, rien que l'autre jour, je me
+    baladais dans la rue, il devait faire AU MOINS 60 degr\xE9s Fahrenheit. Puis
+    je rentre dans une boutique de klimatireurs et d'un coup BAM, 15 degr\xE9s cr\xE9sus.
+    Tu te rends compte de la diff\xE9rence ! C'est de la folie tout \xE7a ! Mais
+    je suis pas surpris, hein ! Ah bah, \xE7a me rappelle cette terrible journ\xE9e
+    pluvieuse de mi-septembre. Le tonnerre grondait et la pluie tombait \xE0 flots
+    ! Mais je m'en fous, j'\xE9tais chez moi. Quand tout d'un coup, alors que j'\xE9tais
+    \"z\xE9po devant la t\xE9l\xE9\", comme vous dites, VOUS les djeuns haha... J'entends
+    un gros bruit sourd. Je pars investiguer et sur quoi je tombe ? LE SOL, je me
+    suis pris les pieds dans un c\xE2ble. Bref, 2 doliprones par jour apr\xE8s \xE7a
+    pendant 2 semaines. Je n'ai jamais \xE9t\xE9 le m\xEAme homme apr\xE8s. Bon \xE7a
+    surtout parce que je me suis mari\xE9 et que j'ai chang\xE9 mon nom. Qu'est-ce
+    qu'elle \xE9tait douce, mon meilleur mariage jusqu'\xE0 aujourd'hui ! 8 semaines
+    de pur bonheur, apr\xE8s elle partit acheter du lait. Comme toutes les autres.
+    C'est fou ce que les femmes aiment le lait, non ? Et tu sais, c'\xE9tait seulement
+    mon 12\u1D49 mariage ! Tu penses que je devrais commencer un \xE9levage de vache
+    ? Au moins on aurait du lait \xE0 volont\xE9 directement \xE0 la source. Tu aimes
+    bien le lait toi ? Moi je le dig\xE8re pas. Je pense que c'est la chaleur, j'ai
+    vu que \xE7a pouvait faire tourner le lait. Pas \xE9tonnant que j'aie mal au
+    ventre apr\xE8s. Une tornade de lait dans l'estomac ! T'as d\xE9j\xE0 vu une
+    tornade ? Moi non. Pourtant j'ai d\xE9j\xE0 souffl\xE9 tr\xE8s fort avec des
+    potes. Mais \xE7a a pas suffi, faut croire. Tu penses que si on court en rond
+    en m\xEAme temps \xE7a peut fonctionner ? Non attends, r\xE9ponds pas ! Je vais
+    demander \xE0 CatPTG \xE0 la place. Il sait tout, lui, il est trop fort. C'est
+    mon meilleur copain, enfin juste apr\xE8s toi, hein ! Quoique... attends, bouge
+    pas ! Je vais faire une liste de vos qualit\xE9s et d\xE9fauts respectifs et
+    je reviens avec la r\xE9ponse !"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -20966,7 +21015,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 96
+  m_fontSize: 12.3
   m_fontSizeBase: 72
   m_fontWeight: 400
   m_enableAutoSizing: 1
