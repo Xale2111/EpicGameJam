@@ -11,6 +11,9 @@ public class PlayerController : MonoBehaviour {
     float _currentAngle = 0f;
     float _angleModifier = 1f;
     bool _sprinting = false;
+
+    bool _isMoving = false;
+
     void Update() {
         if(GameManager._instance._isPlayerDrawing) {
             return;
@@ -27,7 +30,11 @@ public class PlayerController : MonoBehaviour {
 
         transform.Translate(input * _speed * Time.deltaTime * (_sprinting ? 2f : 1f));
 
-        if(input.sqrMagnitude > 0f) {
+        _isMoving = input.sqrMagnitude > 0f;
+    }
+
+    private void FixedUpdate() {
+        if(_isMoving) {
             if(_currentAngle == _bobbingAngle * _angleModifier) {
                 _angleModifier *= -1f;
             }
