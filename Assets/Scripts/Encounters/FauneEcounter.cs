@@ -11,6 +11,8 @@ public class FauneEcounter : EventTriggerer {
         
         DrawnCreatureSpawner._instance.ShowPanel();
         DrawnCreatureSpawner._instance.spawnPoint = transform;
+
+        DrawnCreatureSpawner._instance.EnableAnimalSpawnButton();
         gameObject.SetActive(false);
     }
 }
