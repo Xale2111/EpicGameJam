@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour {
 
     DrawnElement _currentDrawnElement = DrawnElement.NONE;
 
+    Transform[] _cagetransforms;
+
     void Awake() {
         if(_instance == null) {
             _instance = this;
@@ -21,6 +23,8 @@ public class GameManager : MonoBehaviour {
 
         _drawingDataSaver = new DrawingDataSaver();
         _drawingDataSaver.Initialize();
+
+        _cagetransforms = new Transform[(int)Animals.Length];
     }
 
     public void ElementDrawn(DrawnElement element, Animals animal) {
@@ -73,5 +77,15 @@ public class GameManager : MonoBehaviour {
         }
 
         return null;
+    }
+
+    public void RegisterMyselfCageVersion(Transform newCage, Animals animal) {
+        _cagetransforms[(int)animal] = newCage;
+    }
+
+    public Transform GetCageTransform(Animals animal) {
+        Transform cageSpot = _cagetransforms[(int)animal];
+        cageSpot.GetComponent<CageAutoRegister>()._cageDrawer.SetActive(true);
+        return cageSpot;
     }
 }

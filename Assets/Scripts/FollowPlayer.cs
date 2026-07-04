@@ -44,6 +44,15 @@ public class FollowPlayer : MonoBehaviour
 
     SpriteRenderer spriteRenderer;
 
+    bool _captured = false;
+
+    Animals _animal;
+
+    //IDLE IN CIRCUS
+    float _currentAngle = 0f;
+    float _bobbingAngle = 10f;
+    float _angleModifier = 1f;
+
     void Start()
     {
         spriteTransform = GetComponentInChildren<SpriteRenderer>().transform;
@@ -51,18 +60,33 @@ public class FollowPlayer : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
         circus = GameObject.FindGameObjectWithTag("Circus").transform;
         rb = GetComponent<Rigidbody2D>();
+        _animal = GameManager._instance._currentAnimalBeingDrawn;
     }
 
     void FixedUpdate()
     {
+        if(_captured) {
+            if(_currentAngle == _bobbingAngle * _angleModifier) {
+                _angleModifier *= -1f;
+            }
+            else {
+                _currentAngle = Mathf.Lerp(_currentAngle, _bobbingAngle * _angleModifier, 0.3f);
+                if(Mathf.Abs(_currentAngle - _bobbingAngle * _angleModifier) < 0.1f) {
+                    _currentAngle = _bobbingAngle * _angleModifier;
+                }
+                transform.rotation = Quaternion.Euler(0f, 0f, _currentAngle);
+            }
+
+            return;
+        }
+
         if (Vector2.Distance(transform.position, circus.position) < circusRadius)
         {
             MoveTowards(circus);
             if (Vector2.Distance(transform.position, circus.position) < 1f)
             {
-                gameObject.SetActive(false);
-                this.enabled = false;
-                //TP Animal to circus area
+                _captured = true;
+                transform.position = GameManager._instance.GetCageTransform(_animal).position;
             }
         }
         else

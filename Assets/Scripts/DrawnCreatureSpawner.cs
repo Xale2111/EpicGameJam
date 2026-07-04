@@ -95,7 +95,7 @@ public class DrawnCreatureSpawner : MonoBehaviour
     public System.Collections.Generic.List<GameObject> GetSpawnedCreatures() => spawnedCreatures;
 
     public void EnableAnimalSpawnButton() {
-        _animalButton.SetActive(false);
-        _elementButton.SetActive(true);
+        _animalButton.SetActive(true);
+        _elementButton.SetActive(false);
     }
 }
