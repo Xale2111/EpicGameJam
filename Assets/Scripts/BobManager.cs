@@ -7,6 +7,7 @@ enum BobState
     Tshirt,
     Pants,
     Shoes,
+    Hidden
 }
 
 public class BobManager : MonoBehaviour
@@ -63,7 +64,10 @@ public class BobManager : MonoBehaviour
                 HideShoes();
                 ShowFeet();
                 break;
-            
+            case BobState.Hidden:
+                gameObject.SetActive(false);
+                //TODO : Display in the home 
+                break;
             default:
                 break;
         }

@@ -7,7 +7,10 @@ public class FauneEcounter : EventTriggerer {
         GameManager._instance._isPlayerDrawing = true;
         GameManager._instance.ElementDrawn(DrawnElement.BODY, _animalToEncounter);
 
+        HelpPanel.Instance.ChangeHelpAnimal(_animalToEncounter);
+        
         DrawnCreatureSpawner._instance.ShowPanel();
+        DrawnCreatureSpawner._instance.spawnPoint = transform;
         gameObject.SetActive(false);
     }
 }
