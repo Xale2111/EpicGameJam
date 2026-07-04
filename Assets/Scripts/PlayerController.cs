@@ -3,6 +3,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
     [SerializeField] Transform _playerVisual;
 
+    [SerializeField] public SpriteRenderer _playerBody;
+    [SerializeField] public SpriteRenderer _playerHat;
+
     [SerializeField, Range(0f, 10f)] float _speed = 7f;
     [SerializeField, Range(0f, 10f)] float _bobbingSpeed = 3f;
     [SerializeField] float _bobbingAngle = 25f;

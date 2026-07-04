@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour {
 
     DrawnElement _currentDrawnElement = DrawnElement.NONE;
 
-    void Start() {
+    void Awake() {
         if(_instance == null) {
             _instance = this;
         }

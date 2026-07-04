@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 /// <summary>
 /// À attacher sur un RawImage (UI). Permet de dessiner dessus au clic/drag
@@ -214,6 +215,21 @@ public class DrawingPad : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoi
         return newSprite;
     }
 
+    public Tuple<Sprite, Texture2D> GetSpriteAndTexture() {
+        Texture2D copie = CloneTexture(drawTexture);
+
+        Sprite newSprite = Sprite.Create(
+            copie,
+            new Rect(0, 0, copie.width, copie.height),
+            new Vector2(0.5f, 0.5f),
+            256f // pixels per unit, à ajuster selon ton jeu
+        );
+
+        GameManager._instance.SaveDrawing(newSprite);
+
+        return new Tuple<Sprite, Texture2D>(newSprite, copie);
+    }
+
     /// <summary>Crée une copie indépendante (nouveaux pixels en mémoire) de la texture donnée.</summary>
     private Texture2D CloneTexture(Texture2D source)
     {
@@ -233,7 +249,7 @@ public class DrawingPad : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoi
 
     public void ChangeBrushSize()
     {
-        brushSize = Random.Range(minBrushSize, maxBrushSize);
+        brushSize = UnityEngine.Random.Range(minBrushSize, maxBrushSize);
         sizeButtonText.text = sizeNames[brushSize - 1];
     }
 
