@@ -16,7 +16,10 @@ public class DrawnCreatureSpawner : MonoBehaviour
     public Transform spawnPoint;
     
     [SerializeField] BobManager bobManager;
-    
+
+    [SerializeField] GameObject _elementButton;
+    [SerializeField] GameObject _animalButton;
+
     /// <summary>Liste des créatures instanciées, si tu veux garder une trace de toutes.</summary>
     private System.Collections.Generic.List<GameObject> spawnedCreatures = new System.Collections.Generic.List<GameObject>();
 
@@ -90,4 +93,9 @@ public class DrawnCreatureSpawner : MonoBehaviour
 
     /// <summary>Renvoie toutes les créatures instanciées jusqu'ici.</summary>
     public System.Collections.Generic.List<GameObject> GetSpawnedCreatures() => spawnedCreatures;
+
+    public void EnableAnimalSpawnButton() {
+        _animalButton.SetActive(false);
+        _elementButton.SetActive(true);
+    }
 }
