@@ -7,6 +7,8 @@ using UnityEngine;
 /// </summary>
 public class DrawnCreatureSpawner : MonoBehaviour
 {
+    public static DrawnCreatureSpawner _instance;
+    
     [Header("Références")]
     public GameObject drawingPanel;
     public DrawingPad drawingPad;
@@ -18,6 +20,14 @@ public class DrawnCreatureSpawner : MonoBehaviour
 
     private void Start()
     {
+        if(_instance == null) {
+            _instance = this;
+        }
+        else {
+            Destroy(gameObject);
+        }
+        
+        
         HidePanel();
     }
 
