@@ -44,7 +44,7 @@ public class DrawnCreatureSpawner : MonoBehaviour
         drawingPad.ClearCanvas();
         HidePanel();
         GameManager._instance._isPlayerDrawing = false;
-        bobManager.NextPosition();
+        bobManager.NextOutfit();
         // Ferme le popup ici si besoin, ex :
         // drawingPad.transform.root.gameObject.SetActive(false);
     }

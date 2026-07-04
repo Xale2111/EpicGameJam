@@ -1,3 +1,4 @@
+using System;
 using Unity.Cinemachine;
 using UnityEngine;
 
@@ -10,6 +11,13 @@ enum BobState
     Hidden
 }
 
+[System.Serializable]
+public struct BobPosition
+{
+    public Vector2 position;
+    public bool beenInPosition;
+}
+
 public class BobManager : MonoBehaviour
 {
     [SerializeField] private GameObject hat;
@@ -18,8 +26,8 @@ public class BobManager : MonoBehaviour
     [SerializeField] private GameObject shoes;
     [SerializeField] private GameObject feet;
 
-    [SerializeField] private Vector2[] positions;
-    
+    [SerializeField] private BobPosition[] positions;
+    Transform player;
     
     int currentPosition = 0;
     
@@ -31,24 +39,19 @@ public class BobManager : MonoBehaviour
     {
         if (positions.Length > 0)
         {
-            transform.position = positions[currentPosition];
-            currentPosition++;
+            transform.position = positions[currentPosition].position;
         }
         hat.SetActive(true);
         tshirt.SetActive(true);
         pants.SetActive(true);
         shoes.SetActive(true);
         feet.SetActive(false);
+        
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
-    public void NextPosition()
+    public void NextOutfit()
     {
-        if (currentPosition < positions.Length)
-        {
-            transform.position = positions[currentPosition];
-            currentPosition++;
-        }
-
         switch (currentBobState)
         {
             case BobState.Hat:
@@ -73,6 +76,35 @@ public class BobManager : MonoBehaviour
         }
 
         currentBobState++;
+        positions[currentPosition].beenInPosition = true;
+    }
+
+    private void Update()
+    {
+        int closestPositionIndex = positions.Length - 1;
+
+        foreach (BobPosition position in positions)
+        {
+            if (!position.beenInPosition)
+            {
+                closestPositionIndex = Array.IndexOf(positions, position);
+                break;
+            }
+        }
+
+        foreach (BobPosition position in positions)
+        {
+            if (Vector2.Distance(player.position, position.position) < Vector2.Distance(player.position, positions[closestPositionIndex].position))
+            {
+                if (!position.beenInPosition)
+                {
+                    closestPositionIndex = Array.IndexOf(positions, position);
+                }
+
+            }
+        }
+        currentPosition = closestPositionIndex;
+        transform.position = positions[closestPositionIndex].position;
     }
 
     public void HideHat()
