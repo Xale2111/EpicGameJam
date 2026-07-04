@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour {
 
     void Update() {
         if(GameManager._instance._isPlayerDrawing) {
+            _rb.linearVelocity = Vector3.zero;
             return;
         }
 

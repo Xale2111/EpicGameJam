@@ -27,9 +27,8 @@ public class DecoreDrawerManager : MonoBehaviour {
     }
 
     public void ValidateDrawing() {
-        Debug.Log("Called");
         if(!_drawingPad.HasEnoughContent()) return;
-        Debug.Log("Called");
+
         GameManager._instance.ElementDrawn(_element, _animal);
 
         Sprite sprite = _drawingPad.CreateSprite();
