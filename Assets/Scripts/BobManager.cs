@@ -34,6 +34,8 @@ public class BobManager : MonoBehaviour
     [Header("Dialogs")][Space(10)]
     [SerializeField] private string[] dialogLines;
     [SerializeField] private TextMeshProUGUI dialogueText;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip[] audioClips;
     
     Transform player;
     
@@ -41,6 +43,7 @@ public class BobManager : MonoBehaviour
     int currentDialogLine = 0;
     
     bool isInCircus = false;
+    private bool startedTalking = false;
     
     BobState currentBobState = BobState.Hat;
     
@@ -59,6 +62,8 @@ public class BobManager : MonoBehaviour
         feet.SetActive(false);
         
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        audioSource.clip = audioClips[currentDialogLine];
+        audioSource.Stop();
     }
 
     public void NextOutfit()
@@ -88,6 +93,8 @@ public class BobManager : MonoBehaviour
 
         currentBobState++;
         currentDialogLine++;
+        audioSource.clip = audioClips[currentDialogLine];
+        startedTalking = false;
         positions[currentPosition].beenInPosition = true;
         
     }
@@ -124,6 +131,21 @@ public class BobManager : MonoBehaviour
     public void SetDialogLine()
     {
         dialogueText.text = dialogLines[currentDialogLine];
+    }
+
+    public void PlayDialogVoice()
+    {
+        if (!startedTalking)
+        {
+            startedTalking = true;
+            audioSource.Play();
+        }
+
+    }
+
+    public void PauseDialogvoice()
+    {
+        audioSource.Pause();
     }
 
     public void HideHat()

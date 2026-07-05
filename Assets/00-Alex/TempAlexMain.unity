@@ -124020,7 +124020,7 @@ MonoBehaviour:
     beenInPosition: 0
   - position: {x: -14.55, y: -68.91}
     beenInPosition: 0
-  circusTpPoint: {fileID: 0}
+  circusTpPoint: {fileID: 2125865649}
   dialogLines:
   - "Salut, moi c'est Bob ! Bienvenu.e dans la Cordill\xE8re des Andes ! Ici il fait
     chaud, tr\xE8s chaud !"
@@ -124129,6 +124129,13 @@ MonoBehaviour:
     pas ! Je vais faire une liste de vos qualit\xE9s et d\xE9fauts respectifs et
     je reviens avec la r\xE9ponse !"
   dialogueText: {fileID: 881358501}
+  audioSource: {fileID: 1686834331}
+  audioClips:
+  - {fileID: 8300000, guid: 5b70e52fa8e921d4aa6bfc964d8d944d, type: 3}
+  - {fileID: 8300000, guid: 5797041a271b15f40a5f895def2953b8, type: 3}
+  - {fileID: 8300000, guid: 6aa775cce2f60474cb2df53587e3241f, type: 3}
+  - {fileID: 8300000, guid: 368bee348ac47dd4d95ef460b27fee99, type: 3}
+  - {fileID: 8300000, guid: bf371560e332fc04c9dcc6ee351d8bad, type: 3}
 --- !u!82 &1686834331
 AudioSource:
   m_ObjectHideFlags: 0
@@ -124141,7 +124148,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -124150,8 +124157,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 10
+  MaxDistance: 55
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -124201,7 +124208,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.2777778
       inSlope: 0
       outSlope: 0
       tangentMode: 0

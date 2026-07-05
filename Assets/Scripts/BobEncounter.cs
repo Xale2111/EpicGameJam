@@ -11,6 +11,7 @@ public class BobEncounter : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             bob.SetDialogLine();
+            bob.PlayDialogVoice();
             dialoguePanel.Display();
         }
     }
