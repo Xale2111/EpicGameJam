@@ -9,7 +9,7 @@ enum BobState
     Tshirt,
     Pants,
     Shoes,
-    Hidden
+    Circus
 }
 
 [System.Serializable]
@@ -29,6 +29,7 @@ public class BobManager : MonoBehaviour
 
     [Header("Bob positions")][Space(10)]
     [SerializeField] private BobPosition[] positions;
+    [SerializeField] private Transform circusTpPoint;
     
     [Header("Dialogs")][Space(10)]
     [SerializeField] private string[] dialogLines;
@@ -38,6 +39,8 @@ public class BobManager : MonoBehaviour
     
     int currentPosition = 0;
     int currentDialogLine = 0;
+    
+    bool isInCircus = false;
     
     BobState currentBobState = BobState.Hat;
     
@@ -75,9 +78,9 @@ public class BobManager : MonoBehaviour
                 HideShoes();
                 ShowFeet();
                 break;
-            case BobState.Hidden:
-                gameObject.SetActive(false);
-                //TODO : Display in the home 
+            case BobState.Circus:
+                transform.position = circusTpPoint.position;
+                isInCircus = true;
                 break;
             default:
                 break;
@@ -91,6 +94,8 @@ public class BobManager : MonoBehaviour
 
     private void Update()
     {
+        if (isInCircus)
+            return;
         int closestPositionIndex = positions.Length - 1;
 
         foreach (BobPosition position in positions)
@@ -110,7 +115,6 @@ public class BobManager : MonoBehaviour
                 {
                     closestPositionIndex = Array.IndexOf(positions, position);
                 }
-
             }
         }
         currentPosition = closestPositionIndex;
