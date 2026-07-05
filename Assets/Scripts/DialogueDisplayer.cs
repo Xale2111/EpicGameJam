@@ -8,6 +8,7 @@ public class DialogueDisplayer : MonoBehaviour {
 
     GameObject _panel;
 
+
     void Awake() {
         _panel = FindAnyObjectByType<DisplayPanelDialogue>().gameObject;
         _dialogueHolder = _panel.GetComponentInChildren<TMP_Text>();
@@ -17,11 +18,17 @@ public class DialogueDisplayer : MonoBehaviour {
 
 
     private void OnTriggerEnter2D(Collider2D collision) {
+        if(!collision.CompareTag("Player"))
+            return;
+
         _dialogueHolder.text = _DialogueContent;
         _panel.SetActive(true);
     }
 
     private void OnTriggerExit2D(Collider2D collision) {
+        if(!collision.CompareTag("Player"))
+            return;
+
         _dialogueHolder.text = "";
         _panel.SetActive(false);
     }
