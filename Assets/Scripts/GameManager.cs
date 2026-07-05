@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour {
 
     Transform[] _cagetransforms;
 
+    int _habitatConstructed = 0;
+
     void Awake() {
         if(_instance == null) {
             _instance = this;
@@ -39,6 +41,11 @@ public class GameManager : MonoBehaviour {
             break;
             case DrawnElement.HABITAT:
             _drawingDataSaver._animals[(int)_currentAnimalBeingDrawn]._habitat = spriteToSave;
+            _habitatConstructed++;
+            if(_habitatConstructed == (int)Animals.Length) {
+                _isPlayerDrawing = true;
+                EndpanelManager._instance.EndGame();
+            }
             break;
             case DrawnElement.FOOD:
             _drawingDataSaver._animals[(int)_currentAnimalBeingDrawn]._food = spriteToSave;

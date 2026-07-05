@@ -24,6 +24,7 @@ public enum DrawnElement{
     CHAPITEAU,
     PLAYER_BODY,
     PLAYER_HAT,
+    Length,
     NONE
 }
 
@@ -46,4 +47,44 @@ public class DrawingDataSaver : ScriptableObject {
         _animals = new Animal[(int)Animals.Length];
         _initilized = true;
     }
+
+    public Sprite GetRandomSprite(){
+        while(true) {
+            Sprite selectedSprite = null;
+            int randomElement = Random.Range(0, (int)DrawnElement.Length);
+            int randomAnimal = Random.Range(0, (int)Animals.Length);
+            switch((DrawnElement)randomElement) {
+                case DrawnElement.BODY:
+                selectedSprite = _animals[(int)randomAnimal]._body;
+                break;
+
+                case DrawnElement.HABITAT:
+                selectedSprite = _animals[(int)randomAnimal]._habitat;
+                break;
+
+                case DrawnElement.FOOD:
+                selectedSprite = _animals[(int)randomAnimal]._food;
+                break;
+
+                case DrawnElement.CHAPITEAU:
+                selectedSprite = _chapiteau;
+                break;
+
+                case DrawnElement.PLAYER_BODY:
+                selectedSprite = _playerBody;
+                break;
+
+                case DrawnElement.PLAYER_HAT:
+                selectedSprite = _playerHat;
+                break;
+
+                default:
+                break;
+            }
+
+            if(selectedSprite != null)
+                return  selectedSprite;
+        }
+    }
+
 }
