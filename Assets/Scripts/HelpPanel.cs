@@ -21,6 +21,12 @@ public struct DrawnElementHelp
     public string description;
 }
 
+public struct DrawnHabitatHelp {
+    public Animals animal;
+    public Sprite blurryImage;
+    public string description;
+}
+
 public class HelpPanel : MonoBehaviour
 {
     public static HelpPanel Instance;
@@ -30,8 +36,9 @@ public class HelpPanel : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _helpText;
     [SerializeField] private AnimalHelp[] _animalHelp;
     [SerializeField] private DrawnElementHelp[] _drawnElementHelp;
-    
-    
+    [SerializeField] private DrawnHabitatHelp[] _drawnHabitatHelp;
+
+
     public void ShowPanel() {
         _panel.SetActive(true);
     }
@@ -60,6 +67,16 @@ public class HelpPanel : MonoBehaviour
         {
             _helpImage.sprite = _drawnElementHelp[temp].blurryImage;
             _helpText.text = _drawnElementHelp[temp].description;
+        }
+    }
+
+    public void ChangeHelpHabitat(Animals helpAnimal) {
+        int temp = _drawnHabitatHelp.Select((drawnHabitatHelp, index) => new { Animal = drawnHabitatHelp.animal, Index = index })
+            .Where(a => a.Animal == helpAnimal).Select(a => a.Index).First();
+
+        if(_drawnHabitatHelp[temp].animal != Animals.NONE) {
+            _helpImage.sprite = _drawnHabitatHelp[temp].blurryImage;
+            _helpText.text = _drawnHabitatHelp[temp].description;
         }
     }
 

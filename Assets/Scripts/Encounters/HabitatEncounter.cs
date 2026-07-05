@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BuildingEncounter : EventTriggerer {
+public class HabitatEncounter : EventTriggerer {
     [SerializeField] DrawnElement _element;
     [SerializeField] Animals _animal;
     [SerializeField] GameObject _prefab;
@@ -9,7 +9,7 @@ public class BuildingEncounter : EventTriggerer {
         DecoreDrawerManager._instance.SetDrawingObjective(_element, _animal, transform.position, _prefab);
         DecoreDrawerManager._instance.ShowPanel();
         DecoreDrawerManager._instance.EnableElementbuildingButton();
-        HelpPanel.Instance.ChangeHelpElement(_element);
+        HelpPanel.Instance.ChangeHelpHabitat(_animal);
         GameManager._instance._isPlayerDrawing = true;
 
         Destroy(gameObject);
