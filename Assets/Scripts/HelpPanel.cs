@@ -13,6 +13,14 @@ public struct AnimalHelp
     public string description;
 }
 
+[Serializable]
+public struct DrawnElementHelp
+{
+    public DrawnElement element;
+    public Sprite blurryImage;
+    public string description;
+}
+
 public class HelpPanel : MonoBehaviour
 {
     public static HelpPanel Instance;
@@ -21,6 +29,8 @@ public class HelpPanel : MonoBehaviour
     [SerializeField] private Image _helpImage;
     [SerializeField] private TextMeshProUGUI _helpText;
     [SerializeField] private AnimalHelp[] _animalHelp;
+    [SerializeField] private DrawnElementHelp[] _drawnElementHelp;
+    
     
     public void ShowPanel() {
         _panel.SetActive(true);
@@ -40,7 +50,19 @@ public class HelpPanel : MonoBehaviour
             _helpText.text = _animalHelp[temp].description;
         }
     }
-    
+
+    public void ChangeHelpElement(DrawnElement helpElement)
+    {
+        int temp = _drawnElementHelp.Select((helpElement, index) => new { Element = helpElement.element, Index = index })
+            .Where(a => a.Element == helpElement).Select(a => a.Index).First();
+
+        if (_drawnElementHelp[temp].element != DrawnElement.NONE)
+        {
+            _helpImage.sprite = _drawnElementHelp[temp].blurryImage;
+            _helpText.text = _drawnElementHelp[temp].description;
+        }
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

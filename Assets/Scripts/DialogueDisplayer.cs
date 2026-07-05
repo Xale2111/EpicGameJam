@@ -9,11 +9,9 @@ public class DialogueDisplayer : MonoBehaviour {
     GameObject _panel;
 
 
-    void Awake() {
+    void Start() {
         _panel = FindAnyObjectByType<DisplayPanelDialogue>().gameObject;
         _dialogueHolder = _panel.GetComponentInChildren<TMP_Text>();
-
-        
     }
 
 
