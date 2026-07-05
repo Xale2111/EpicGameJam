@@ -8952,8 +8952,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 420641914}
-  - component: {fileID: 420641916}
   - component: {fileID: 420641915}
+  - component: {fileID: 420641917}
   m_Layer: 0
   m_Name: DrawLamaCage
   m_TagString: Untagged
@@ -9012,7 +9012,7 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 5.79
---- !u!114 &420641916
+--- !u!114 &420641917
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9021,9 +9021,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 420641913}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49e1bd9b29c90d0419ef9a2c03acb9a8, type: 3}
+  m_Script: {fileID: 11500000, guid: 59bbf7b2d71db984ab284400a74003da, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BuildingEncounter
+  m_EditorClassIdentifier: Assembly-CSharp::HabitatEncounter
   _playerLayerMask:
     serializedVersion: 2
     m_Bits: 64
@@ -11689,8 +11689,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 542810858}
-  - component: {fileID: 542810860}
   - component: {fileID: 542810859}
+  - component: {fileID: 542810861}
   m_Layer: 0
   m_Name: DrawFlamingoCage
   m_TagString: Untagged
@@ -11749,7 +11749,7 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 5.79
---- !u!114 &542810860
+--- !u!114 &542810861
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -11758,9 +11758,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 542810857}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49e1bd9b29c90d0419ef9a2c03acb9a8, type: 3}
+  m_Script: {fileID: 11500000, guid: 59bbf7b2d71db984ab284400a74003da, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BuildingEncounter
+  m_EditorClassIdentifier: Assembly-CSharp::HabitatEncounter
   _playerLayerMask:
     serializedVersion: 2
     m_Bits: 64
@@ -21236,8 +21236,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 887925928}
-  - component: {fileID: 887925930}
   - component: {fileID: 887925929}
+  - component: {fileID: 887925931}
   m_Layer: 0
   m_Name: DrawTapirCage
   m_TagString: Untagged
@@ -21296,7 +21296,7 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 5.79
---- !u!114 &887925930
+--- !u!114 &887925931
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -21305,9 +21305,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 887925927}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49e1bd9b29c90d0419ef9a2c03acb9a8, type: 3}
+  m_Script: {fileID: 11500000, guid: 59bbf7b2d71db984ab284400a74003da, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BuildingEncounter
+  m_EditorClassIdentifier: Assembly-CSharp::HabitatEncounter
   _playerLayerMask:
     serializedVersion: 2
     m_Bits: 64
@@ -22991,8 +22991,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 963252044}
-  - component: {fileID: 963252046}
   - component: {fileID: 963252045}
+  - component: {fileID: 963252047}
   m_Layer: 0
   m_Name: DrawPenguinCage
   m_TagString: Untagged
@@ -23051,7 +23051,7 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 5.79
---- !u!114 &963252046
+--- !u!114 &963252047
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -23060,9 +23060,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 963252043}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49e1bd9b29c90d0419ef9a2c03acb9a8, type: 3}
+  m_Script: {fileID: 11500000, guid: 59bbf7b2d71db984ab284400a74003da, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BuildingEncounter
+  m_EditorClassIdentifier: Assembly-CSharp::HabitatEncounter
   _playerLayerMask:
     serializedVersion: 2
     m_Bits: 64
@@ -126918,8 +126918,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1814742784}
-  - component: {fileID: 1814742786}
   - component: {fileID: 1814742785}
+  - component: {fileID: 1814742787}
   m_Layer: 0
   m_Name: DrawCondorCage
   m_TagString: Untagged
@@ -126978,7 +126978,7 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 5.79
---- !u!114 &1814742786
+--- !u!114 &1814742787
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -126987,9 +126987,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1814742783}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49e1bd9b29c90d0419ef9a2c03acb9a8, type: 3}
+  m_Script: {fileID: 11500000, guid: 59bbf7b2d71db984ab284400a74003da, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BuildingEncounter
+  m_EditorClassIdentifier: Assembly-CSharp::HabitatEncounter
   _playerLayerMask:
     serializedVersion: 2
     m_Bits: 64
