@@ -13,12 +13,12 @@ public class SwitchSceneManager : MonoBehaviour
     
     public void SwitchToGameScene()
     {
-        SceneManager.LoadScene(SceneManager.GetSceneByName("MainScene").buildIndex);
+        SceneManager.LoadScene("MainScene");
     }
     
     public void SwitchToMainMenu()
     {
-        SceneManager.LoadScene(SceneManager.GetSceneByName("MainMenu").buildIndex);
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void QuitGame()
