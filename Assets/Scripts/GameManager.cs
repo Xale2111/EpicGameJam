@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour {
             _drawingDataSaver._animals[(int)_currentAnimalBeingDrawn]._habitat = spriteToSave;
             _habitatConstructed++;
             if(_habitatConstructed == (int)Animals.Length) {
-                _isPlayerDrawing = true;
+                //_isPlayerDrawing = true;
                 EndpanelManager._instance.EndGame();
             }
             break;
