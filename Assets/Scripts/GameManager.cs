@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class GameManager : MonoBehaviour {
     public DrawingDataSaver _drawingDataSaver;
@@ -14,6 +15,8 @@ public class GameManager : MonoBehaviour {
     Transform[] _cagetransforms;
 
     int _habitatConstructed = 0;
+
+    [SerializeField] public AudioResource[] _animalAudioResources;
 
     void Awake() {
         if(_instance == null) {

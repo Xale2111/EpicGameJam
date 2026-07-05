@@ -56,7 +56,7 @@ public class DrawnCreatureSpawner : MonoBehaviour
     {
         Vector3 pos = spawnPoint != null ? spawnPoint.position : Vector3.zero;
         GameObject animal = Instantiate(creaturePrefab, pos, Quaternion.identity);
-
+       //animal.GetComponent<AudioSource>(). = GameManager._instance._animalAudioResources[(int)GameManager._instance._currentAnimalBeingDrawn];
         if (GameManager._instance._currentAnimalBeingDrawn == Animals.CONDOR ||
             GameManager._instance._currentAnimalBeingDrawn == Animals.FLAMINGO)
         {

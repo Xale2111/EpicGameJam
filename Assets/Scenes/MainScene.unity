@@ -115508,6 +115508,12 @@ MonoBehaviour:
   _drawingDataSaver: {fileID: 0}
   _isPlayerDrawing: 0
   _currentAnimalBeingDrawn: 3
+  _animalAudioResources:
+  - {fileID: 6418180475301049370, guid: 1ee604e118f384d449edf297bb34668d, type: 2}
+  - {fileID: 6418180475301049370, guid: 7c2e36e18904ead42a986af07bad6dc2, type: 2}
+  - {fileID: 6418180475301049370, guid: 63ca6d1192a8fcf438b8d1e2d4365114, type: 2}
+  - {fileID: 6418180475301049370, guid: 7fe03861062c1874d802e29ed4753f1a, type: 2}
+  - {fileID: 6418180475301049370, guid: b7440d5796d2d6941bac2fb7dec3ab24, type: 2}
 --- !u!1 &1196897964
 GameObject:
   m_ObjectHideFlags: 0

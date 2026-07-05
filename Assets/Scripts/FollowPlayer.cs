@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.PlayerLoop;
 
 public class FollowPlayer : MonoBehaviour
@@ -52,6 +53,9 @@ public class FollowPlayer : MonoBehaviour
     float _currentAngle = 0f;
     float _bobbingAngle = 10f;
     float _angleModifier = 1f;
+
+    AudioResource _audioResources;
+
 
     void Start()
     {
