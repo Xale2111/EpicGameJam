@@ -93,7 +93,10 @@ public class BobManager : MonoBehaviour
 
         currentBobState++;
         currentDialogLine++;
-        audioSource.clip = audioClips[currentDialogLine];
+        if (currentDialogLine < audioClips.Length)
+        {   
+            audioSource.clip = audioClips[currentDialogLine];
+        }
         startedTalking = false;
         positions[currentPosition].beenInPosition = true;
         
