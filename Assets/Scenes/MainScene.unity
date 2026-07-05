@@ -1588,9 +1588,27 @@ MonoBehaviour:
     blurryImage: {fileID: 21300000, guid: 1e62f568cd7e136448a82f3d30160360, type: 3}
     description: "Dessine un Flaman Rose de la Cordill\xE8re des Andes"
   _drawnElementHelp:
-  - element: 0
-    blurryImage: {fileID: 0}
-    description: 
+  - element: 3
+    blurryImage: {fileID: 21300000, guid: af52548f030d21945ad5aed8879bcd7d, type: 3}
+    description: "Dessine un chapiteau de la Cordill\xE8re des Andes"
+  _drawnHabitatHelp:
+  - animal: 0
+    blurryImage: {fileID: 21300000, guid: aabfc98f701027242826771a03227666, type: 3}
+    description: "Dessine au Lama son habitat naturel de la Cordill\xE8re des Andes"
+  - animal: 1
+    blurryImage: {fileID: 21300000, guid: 5e97b718aa6bee9478b7aebc48cfe179, type: 3}
+    description: "Dessine au Condor son nid de la Cordill\xE8re des Andes"
+  - animal: 2
+    blurryImage: {fileID: 21300000, guid: d709faeef47ea7b40a9d5045cb484cf7, type: 3}
+    description: "Dessine au Tapir son habitat naturel de la Cordill\xE8re des Andes"
+  - animal: 3
+    blurryImage: {fileID: 21300000, guid: 6f3bcb36cf371b84fa784b48da512c16, type: 3}
+    description: "Dessine au Pinguin son igloo de gagnant de loto de la Cordill\xE8re
+      des Andes"
+  - animal: 4
+    blurryImage: {fileID: 21300000, guid: 6e3bcf3f8960c94418aae7380f877cf8, type: 3}
+    description: "Dessine au Flamant Rose son habitat naturel de la Cordill\xE8re
+      des Andes"
 --- !u!1 &97519746
 GameObject:
   m_ObjectHideFlags: 0
@@ -19055,7 +19073,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CageAutoRegister
   _animalType: 0
-  _cageDrawer: {fileID: 0}
+  _cageDrawer: {fileID: 420641913}
 --- !u!1 &813032311
 GameObject:
   m_ObjectHideFlags: 0

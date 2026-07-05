@@ -7,7 +7,7 @@ public class CageAutoRegister : MonoBehaviour
 
     private void Start() {
         GameManager._instance.RegisterMyselfCageVersion(transform, _animalType);
-        _cageDrawer = GetComponentInChildren<BuildingEncounter>().gameObject;
+        _cageDrawer = GetComponentInChildren<HabitatEncounter>().gameObject;
         _cageDrawer.SetActive(false);
     }
 }

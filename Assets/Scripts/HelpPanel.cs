@@ -21,6 +21,7 @@ public struct DrawnElementHelp
     public string description;
 }
 
+[Serializable]
 public struct DrawnHabitatHelp {
     public Animals animal;
     public Sprite blurryImage;
