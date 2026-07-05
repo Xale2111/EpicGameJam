@@ -183,32 +183,4 @@ public class FollowPlayer : MonoBehaviour
             speed = Mathf.Lerp(speed, 0, Time.deltaTime);
         }
     }
-
-    void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, shortRadius);
-
-        Gizmos.color = Color.blue;
-        Gizmos.DrawWireSphere(transform.position, farRadius);
-
-        if (isFlying && player != null)
-        {
-            Gizmos.color = Color.yellow;
-            Vector3 prevPoint = player.position;
-            int steps = 50;
-            for (int i = 1; i <= steps; i++)
-            {
-                float t = (i / (float)steps) * Mathf.PI * 2f;
-                float x = infinityWidth * Mathf.Sin(t);
-                float y = infinityHeight * Mathf.Sin(t) * Mathf.Cos(t);
-                Vector3 point = player.position + new Vector3(x, y, 0);
-                Gizmos.DrawLine(prevPoint, point);
-                prevPoint = point;
-            }
-        }
-
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(circus.position, circusRadius);
-    }
 }
