@@ -10,7 +10,7 @@ public class DialogueDisplayer : MonoBehaviour {
 
 
     void Start() {
-        _panel = FindFirstObjectByType<DisplayPanelDialogue>().gameObject;
+        _panel = DisplayPanelDialogue._instance.gameObject;
         _dialogueHolder = _panel.GetComponentInChildren<TMP_Text>();
     }
 
